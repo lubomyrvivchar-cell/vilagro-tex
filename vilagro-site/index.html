@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>VILAGRO TEX — Наша техніка</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO для Google -->
+  <meta name="description" content="VILAGRO TEX — сучасна українська агрофірма. Реальна сільськогосподарська техніка: трактори, комбайни, жниварки, дискові борони, плуги. Телефон: +380 67 676 40 58." />
+  <link rel="canonical" href="https://vilagro-tec.netlify.app/" />
+
+  <!-- Open Graph для соцмереж (Facebook, Telegram, Viber і т.д.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="VILAGRO TEX — Сільськогосподарська техніка" />
+  <meta property="og:description" content="Реальна техніка, яка є в наявності: трактори, комбайни, жниварки, дискові борони, плуги. Зв'язок: +380 67 676 40 58, Telegram @vilagrotex." />
+  <meta property="og:url" content="https://vilagro-tec.netlify.app/" />
+  <!-- Якщо буде якась красива прев’ю-картинка, можна вказати повний шлях:
+  <meta property="og:image" content="https://vilagro-tec.netlify.app/photos/preview.jpg" />
+  -->
+
+  <style>
+    :root {
+      --green: #2f7c31;
+      --green-dark: #245626;
+      --wheat: #d6a75a;
+      --bg: #f5f2e8;
+      --text: #27313a;
+      --muted: #6b7280;
+      --border: #d7d2c4;
+      --radius: 16px;
+      --shadow-soft: 0 8px 22px rgba(15, 23, 42, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #fdfbf5 0, #f5f2e8 40%, #e9e2d6 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(252, 249, 242, 0.97);
+      backdrop-filter: blur(7px);
+      border-bottom: 1px solid rgba(215, 210, 196, 0.9);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 16px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 0, #ffffff 0, #f7faef 20%, #8cbf55 52%, #2f7c31 82%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fdfdfb;
+      font-size: 18px;
+      box-shadow: 0 7px 18px rgba(47, 124, 49, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: -8px;
+      width: 60%;
+      height: 60%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(214, 167, 90, 0.9), rgba(167, 130, 70, 0.4));
+    }
+
+    .brand-wheat {
+      position: absolute;
+      right: -5px;
+      bottom: -2px;
+      font-size: 15px;
+      transform: rotate(-15deg);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    }
+
+    .header-note {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .header-note div:first-child {
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .nav-link {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f9f6ee;
+      padding: 5px 11px;
+      font-size: 11px;
+      cursor: pointer;
+      color: var(--muted);
+      transition: 0.12s ease;
+    }
+
+    .nav-link:hover {
+      border-color: var(--green);
+      color: var(--green-dark);
+    }
+
+    .nav-link.active {
+      background: var(--green);
+      color: #ffffff;
+      border-color: var(--green-dark);
+      box-shadow: 0 4px 13px rgba(47, 124, 49, 0.3);
+    }
+
+    /* MAIN */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 16px 32px;
+      flex: 1;
+    }
+
+    .top-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .top-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f4ebdd;
+      border: 1px solid rgba(215, 170, 99, 0.7);
+      font-size: 11px;
+      color: #7d5b26;
+      margin-bottom: 4px;
+    }
+
+    .top-stem {
+      width: 10px;
+      height: 16px;
+      border-left: 2px solid #7d5b26;
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .top-stem::before,
+    .top-stem::after {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      border: 2px solid #7d5b26;
+      border-color: #7d5b26 transparent transparent transparent;
+      top: 1px;
+      left: 2px;
+      transform: rotate(35deg);
+    }
+
+    .top-stem::after {
+      top: 6px;
+      left: 0;
+      transform: rotate(15deg);
+    }
+
+    .title-block h1 {
+      font-size: 26px;
+      margin-bottom: 4px;
+    }
+
+    .title-block p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .contact-short {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .contact-short strong {
+      color: var(--text);
+    }
+
+    .guarantee-badge {
+      margin: 8px 0 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      background: #f4ebdd;
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid rgba(215, 170, 99, 0.75);
+      color: #7d5b26;
+    }
+
+    .guarantee-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .filters-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+      margin: 12px 0 8px;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f9f6ee;
+      padding: 6px 13px;
+      font-size: 12px;
+      cursor: pointer;
+      color: var(--muted);
+      transition: 0.12s ease;
+    }
+
+    .filter-btn.active {
+      background: var(--green);
+      color: #ffffff;
+      border-color: var(--green-dark);
+      box-shadow: 0 6px 16px rgba(47, 124, 49, 0.3);
+    }
+
+    .gallery-count {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .photo-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(47, 124, 49, 0.6);
+    }
+
+    .photo-img-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-img-wrapper img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.18s ease;
+    }
+
+    .photo-card:hover .photo-img-wrapper img {
+      transform: scale(1.03);
+    }
+
+    .photo-overlay-tag {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(39, 49, 58, 0.85);
+      color: #fdfaf2;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .photo-info {
+      padding: 8px 10px 10px;
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      background: linear-gradient(180deg, #fdfbf7 0, #ffffff 100%);
+    }
+
+    .photo-info strong {
+      display: block;
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 1px;
+    }
+
+    .category-pill {
+      align-self: flex-start;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: 1px solid rgba(215, 170, 99, 0.9);
+      color: #7d5b26;
+      background: #f8f1e2;
+    }
+
+    .price {
+      color: var(--green-dark);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .extra {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .card-actions {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .card-btn {
+      font-size: 11px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f8f6ef;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: 0.12s ease;
+    }
+
+    .card-btn.primary {
+      background: var(--green);
+      color: #ffffff;
+      border-color: var(--green-dark);
+    }
+
+    .card-btn:hover {
+      border-color: var(--green-dark);
+      background: #f1ebe0;
+    }
+
+    .card-btn.primary:hover {
+      background: var(--green-dark);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(27, 35, 46, 0.84);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 50;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      max-width: 1000px;
+      width: 100%;
+      max-height: 90vh;
+      background: #fdfaf4;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #d4d0c4;
+      box-shadow: 0 24px 65px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lightbox-img-wrapper {
+      flex: 1;
+      background: #e7e0cf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img-wrapper img {
+      max-height: 70vh;
+      width: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .lightbox-info {
+      padding: 8px 12px 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text);
+      background: #fdfaf4;
+      border-top: 1px solid #e0dac8;
+    }
+
+    .lightbox-text-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .lightbox-title {
+      font-weight: 600;
+    }
+
+    .lightbox-sub {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .lightbox-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .lightbox-btn,
+    .lightbox-link {
+      border-radius: 999px;
+      border: 1px solid #d4d0c4;
+      padding: 5px 10px;
+      background: #ffffff;
+      color: var(--text);
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: 0.12s ease;
+    }
+
+    .lightbox-link.primary {
+      background: var(--green);
+      color: #ffffff;
+      border-color: var(--green-dark);
+    }
+
+    .lightbox-btn:hover,
+    .lightbox-link:hover {
+      background: #f2ecdd;
+    }
+
+    .lightbox-link.primary:hover {
+      background: var(--green-dark);
+    }
+
+    .lightbox-close {
+      border-radius: 999px;
+      border: 1px solid #d4d0c4;
+      padding: 5px 10px;
+      background: #ffffff;
+      color: var(--text);
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #d4d0c4;
+      background: #f8f4ea;
+      padding: 10px 16px 14px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .top-block {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-short {
+        text-align: left;
+      }
+
+      .lightbox-info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="header-top">
+        <div class="brand">
+          <a href="https://vilagro-tec.netlify.app/">
+            <div class="brand-mark">
+              V
+              <span class="brand-wheat">🌾</span>
+            </div>
+          </a>
+          <span>VILAGRO TEX</span>
+        </div>
+        <div class="header-note">
+          <div>VILAGRO TEX - Cучасна агрофірма яка працює на результат🚜</div>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <button class="nav-link active" data-filter="all">Уся техніка</button>
+        <button class="nav-link" data-filter="tractor">Трактори</button>
+        <button class="nav-link" data-filter="combine">Комбайни</button>
+        <button class="nav-link" data-filter="header">Жниварки</button>
+        <button class="nav-link" data-filter="disc">Дискові борони</button>
+        <button class="nav-link" data-filter="plow">Плуги</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div class="top-block">
+      <div class="title-block">
+        <div class="top-pill">
+          <span class="top-stem"></span>
+          <span>Реальні фото техніки, яка є у нас</span>
+        </div>
+        <h1>Наша техніка VILAGRO TEX</h1>
+        <p>Тут зібрана техніка, яку ми продаємо або можемо привезти під замовлення.</p>
+      </div>
+      <div class="contact-short">
+        <div><strong>Телефон:</strong> +380 67 676 40 58</div>
+        <div><strong>Telegram:</strong> @vilagrotex</div>
+      </div>
+    </div>
+
+    <div class="guarantee-badge">
+      <span class="guarantee-dot"></span>
+      <span>Перевірена техніка • Допомога з підбором та оформленням</span>
+    </div>
+
+    <div class="filters-row">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">Усе</button>
+        <button class="filter-btn" data-filter="tractor">Трактори</button>
+        <button class="filter-btn" data-filter="combine">Комбайни</button>
+        <button class="filter-btn" data-filter="header">Жниварки</button>
+        <button class="filter-btn" data-filter="disc">Дискові борони</button>
+        <button class="filter-btn" data-filter="plow">Плуги</button>
+      </div>
+      <div class="gallery-count">
+        Фото: <span id="visibleCount">0</span>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <section aria-label="Галерея техніки" id="gallery-section">
+      <div class="gallery-grid" id="gallery">
+
+        <!-- ПРИКЛАД 1: ТРАКТОР John Deere 8335R з 3+ фотками -->
+        <article class="photo-card"
+                 data-category="tractor"
+                 data-title="Трактор John Deere 8335R"
+                 data-subtitle="Польові роботи, кілька ракурсів"
+                 data-price="Ціна: 134 500 $"
+                 data-extra="Стан: Робочий • В наявності"
+                 data-phone="+380676764058"
+                 data-link="https://t.me/vilagrotex"
+                 data-images="photos/tractors/Johndeere8335/tractor1.jpg,photos/tractors/Johndeere8335/tractor2.jpg,photos/tractors/Johndeere8335/tractor3.jpg,photos/tractors/Johndeere8335/tractor4.jpg,photos/tractors/Johndeere8335/tractor5.jpg">
+          <div class="photo-img-wrapper">
+            <img src="photos/tractors/Johndeere8335/tractor1.jpg" alt="John Deere 8335R" />
+            <div class="photo-overlay-tag">ТРАКТОР</div>
+          </div>
+          <div class="photo-info">
+            <div class="category-pill">трактор</div>
+            <strong>John Deere 8335R</strong>
+            <span>2016 рік, 16000 мт/год</span>
+            <span class="price">Ціна: 134 500 $</span>
+            <span class="extra">Стан: Робочий • В наявності</span>
+            <div class="card-actions">
+              <a class="card-btn primary no-lightbox" href="tel:+380676764058">
+                📞 Перетелефонувати продавцю
+              </a>
+              <a class="card-btn no-lightbox" href="https://t.me/vilagrotex" target="_blank">
+                🔗 Переглянути оголошення
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ПРИКЛАД 2: CASE Magnum 310 -->
+        <article class="photo-card"
+                 data-category="tractor"
+                 data-title="Case Magnum 310"
+                 data-subtitle="Весняні польові роботи"
+                 data-price="Ціна: 32 500 $"
+                 data-extra="Стан: Робочий • В наявності"
+                 data-phone="+380676764058"
+                 data-link="https://t.me/vilagrotex"
+                 data-images="photos/tractors/Case310/C3101.jpg,photos/tractors/Case310/C3102.jpg,photos/tractors/Case310/C3103.jpg">
+          <div class="photo-img-wrapper">
+            <img src="photos/tractors/Case310/C3101.jpg" alt="Case Magnum 310" />
+            <div class="photo-overlay-tag">ТРАКТОР</div>
+          </div>
+          <div class="photo-info">
+            <div class="category-pill">трактор</div>
+            <strong>Case Magnum 310</strong>
+            <span>2010 рік, 20000 мт/год</span>
+            <span class="price">Ціна: 32 500 $</span>
+            <span class="extra">Стан: Робочий • В наявності</span>
+            <div class="card-actions">
+              <a class="card-btn primary no-lightbox" href="tel:+380676764058">
+                📞 Перетелефонувати продавцю
+              </a>
+              <a class="card-btn no-lightbox" href="https://t.me/vilagrotex" target="_blank">
+                🔗 Переглянути оголошення
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ПРИКЛАД 3: КОМБАЙН -->
+        <article class="photo-card"
+                 data-category="combine"
+                 data-title="Комбайн"
+                 data-subtitle="Збирання пшениці"
+                 data-price="Ціна: уточнюйте"
+                 data-extra="Стан: б/у після 1 сезону • В наявності"
+                 data-phone="+380676764058"
+                 data-link="https://t.me/vilagrotex"
+                 data-images="photos/combines/combine1.jpg,photos/combines/combine1_detail.jpg">
+          <div class="photo-img-wrapper">
+            <img src="photos/combines/combine1.jpg" alt="Комбайн" />
+            <div class="photo-overlay-tag">COMBINE</div>
+          </div>
+          <div class="photo-info">
+            <div class="category-pill">комбайн</div>
+            <strong>Комбайн</strong>
+            <span>Збирання пшениці</span>
+            <span class="price">Ціна: уточнюйте</span>
+            <span class="extra">Стан: б/у після 1 сезону • В наявності</span>
+            <div class="card-actions">
+              <a class="card-btn primary no-lightbox" href="tel:+380676764058">
+                📞 Перетелефонувати продавцю
+              </a>
+              <a class="card-btn no-lightbox" href="https://t.me/vilagrotex" target="_blank">
+                🔗 Переглянути оголошення
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ПРИКЛАД 4: ЖНИВАРКА -->
+        <article class="photo-card"
+                 data-category="header"
+                 data-title="Жниварка"
+                 data-subtitle="Жниварка в роботі"
+                 data-price="Ціна: від 45 000 $"
+                 data-extra="Стан: нова • В наявності"
+                 data-phone="+380676764058"
+                 data-link="https://t.me/vilagrotex"
+                 data-images="photos/headers/header1.jpg">
+          <div class="photo-img-wrapper">
+            <img src="photos/headers/header1.jpg" alt="Жниварка" />
+            <div class="photo-overlay-tag">HEADER</div>
+          </div>
+          <div class="photo-info">
+            <div class="category-pill">жниварка</div>
+            <strong>Жниварка</strong>
+            <span>Жниварка в роботі</span>
+            <span class="price">Ціна: від 45 000 $</span>
+            <span class="extra">Стан: нова • В наявності</span>
+            <div class="card-actions">
+              <a class="card-btn primary no-lightbox" href="tel:+380676764058">
+                📞 Перетелефонувати продавцю
+              </a>
+              <a class="card-btn no-lightbox" href="https://t.me/vilagrotex" target="_blank">
+                🔗 Переглянути оголошення
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ПРИКЛАД 5: ДИСКОВА БОРОНА -->
+        <article class="photo-card"
+                 data-category="disc"
+                 data-title="Дискова борона V-Disc 6"
+                 data-subtitle="Післяжнивний обробіток"
+                 data-price="Ціна: від 28 000 $"
+                 data-extra="Стан: нова • Під замовлення"
+                 data-phone="+380676764058"
+                 data-link="https://t.me/vilagrotex"
+                 data-images="photos/discs/disc1.jpg">
+          <div class="photo-img-wrapper">
+            <img src="photos/discs/disc1.jpg" alt="Дискова борона V-Disc 6" />
+            <div class="photo-overlay-tag">DISC</div>
+          </div>
+          <div class="photo-info">
+            <div class="category-pill">дискова борона</div>
+            <strong>V-Disc 6</strong>
+            <span>Післяжнивний обробіток</span>
+            <span class="price">Ціна: від 28 000 $</span>
+            <span class="extra">Стан: нова • Під замовлення</span>
+            <div class="card-actions">
+              <a class="card-btn primary no-lightbox" href="tel:+380676764058">
+                📞 Перетелефонувати продавцю
+              </a>
+              <a class="card-btn no-lightbox" href="https://t.me/vilagrotex" target="_blank">
+                🔗 Переглянути оголошення
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ПРИКЛАД 6: ПЛУГ -->
+        <article class="photo-card"
+                 data-category="plow"
+                 data-title="Плуг V-Plow 5"
+                 data-subtitle="Класична оранка"
+                 data-price="Ціна: від 19 000 $"
+                 data-extra="Стан: новий • В наявності"
+                 data-phone="+380676764058"
+                 data-link="https://t.me/vilagrotex"
+                 data-images="photos/plows/plow1.jpg">
+          <div class="photo-img-wrapper">
+            <img src="photos/plows/plow1.jpg" alt="Плуг V-Plow 5" />
+            <div class="photo-overlay-tag">PLOW</div>
+          </div>
+          <div class="photo-info">
+            <div class="category-pill">плуг</div>
+            <strong>Плуг V-Plow 5</strong>
+            <span>Класична оранка</span>
+            <span class="price">Ціна: від 19 000 $</span>
+            <span class="extra">Стан: новий • В наявності</span>
+            <div class="card-actions">
+              <a class="card-btn primary no-lightbox" href="tel:+380676764058">
+                📞 Перетелефонувати продавцю
+              </a>
+              <a class="card-btn no-lightbox" href="https://t.me/vilagrotex" target="_blank">
+                🔗 Переглянути оголошення
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="year"></span> VILAGRO TEX — сільськогосподарська техніка.</span>
+      <span>Сайт: <a href="https://vilagro-tec.netlify.app/">vilagro-tec.netlify.app</a></span>
+    </div>
+  </footer>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <div class="lightbox-img-wrapper">
+      <img id="lightboxImg" src="" alt="" />
+    </div>
+    <div class="lightbox-info">
+      <div class="lightbox-text-main">
+        <div class="lightbox-title" id="lightboxTitle"></div>
+        <div class="lightbox-sub" id="lightboxSubtitle"></div>
+      </div>
+      <div class="lightbox-controls">
+        <a class="lightbox-link primary" id="lightboxCall" href="#" target="_blank">
+          📞 Перетелефонувати
+        </a>
+        <a class="lightbox-link" id="lightboxLink" href="#" target="_blank">
+          🔗 Оголошення
+        </a>
+        <button class="lightbox-btn" id="lightboxPrev">← Попереднє фото</button>
+        <button class="lightbox-btn" id="lightboxNext">Наступне фото →</button>
+        <button class="lightbox-close" id="lightboxClose">Закрити ✕</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Рік у футері
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const navLinks = document.querySelectorAll('.nav-link');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const cards = Array.from(document.querySelectorAll('.photo-card'));
+  const visibleCountEl = document.getElementById('visibleCount');
+  const gallerySection = document.getElementById('gallery-section');
+
+  let activeCategory = 'all';
+
+  function applyFilters() {
+    cards.forEach(card => {
+      const cat = card.dataset.category;
+      const show = (activeCategory === 'all' || activeCategory === cat);
+      card.style.display = show ? 'flex' : 'none';
+    });
+    const count = cards.filter(c => c.style.display !== 'none').length;
+    visibleCountEl.textContent = count;
+  }
+
+  function setCategory(filter) {
+    activeCategory = filter;
+
+    navLinks.forEach(btn => {
+      const f = btn.getAttribute('data-filter');
+      btn.classList.toggle('active', f === filter);
+    });
+
+    filterButtons.forEach(btn => {
+      const f = btn.getAttribute('data-filter');
+      btn.classList.toggle('active', f === filter);
+    });
+
+    applyFilters();
+  }
+
+  navLinks.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      setCategory(filter);
+      gallerySection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      setCategory(filter);
+    });
+  });
+
+  applyFilters();
+
+  // LIGHTBOX ТІЛЬКИ ДЛЯ ФОТО ОДНОГО ТРАКТОРА
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxSubtitle = document.getElementById('lightboxSubtitle');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxLink = document.getElementById('lightboxLink');
+  const lightboxCall = document.getElementById('lightboxCall');
+
+  let currentImages = [];
+  let currentImageIndex = 0;
+
+  function openLightboxFromCard(card) {
+    const imagesStr = card.dataset.images || '';
+    currentImages = imagesStr.split(',').map(s => s.trim()).filter(Boolean);
+    if (!currentImages.length) return;
+
+    currentImageIndex = 0;
+
+    const title = card.dataset.title || '';
+    const subtitle = card.dataset.subtitle || '';
+    const price = card.dataset.price || '';
+    const extra = card.dataset.extra || '';
+    const phone = card.dataset.phone || '';
+    const link = card.dataset.link || '';
+
+    lightboxTitle.textContent = title;
+    lightboxSubtitle.textContent = [subtitle, price, extra].filter(Boolean).join(' • ');
+
+    lightboxImg.src = currentImages[currentImageIndex];
+
+    if (phone) {
+      lightboxCall.href = 'tel:' + phone.replace(/\s+/g, '');
+    } else {
+      lightboxCall.removeAttribute('href');
+    }
+
+    if (link) {
+      lightboxLink.href = link;
+    } else {
+      lightboxLink.removeAttribute('href');
+    }
+
+    lightbox.classList.add('open');
+  }
+
+  function showNextImage() {
+    if (!currentImages.length) return;
+    currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+    lightboxImg.src = currentImages[currentImageIndex];
+  }
+
+  function showPrevImage() {
+    if (!currentImages.length) return;
+    currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+    lightboxImg.src = currentImages[currentImageIndex];
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // щоб клік по кнопках не відкривав лайтбокс
+      if (e.target.closest('.no-lightbox')) return;
+      openLightboxFromCard(card);
+    });
+  });
+
+  lightboxNext.addEventListener('click', showNextImage);
+  lightboxPrev.addEventListener('click', showPrevImage);
+  lightboxClose.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showNextImage();
+    if (e.key === 'ArrowLeft') showPrevImage();
+  });
+</script>
+</body>
+</html>
