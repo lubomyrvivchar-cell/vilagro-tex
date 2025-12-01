@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Про VILAGRO TEX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #256b3a;
+      --green-soft: #e5f2ea;
+      --green-dark: #184227;
+      --accent: #f0b35f;
+      --bg-soft: #fdfcf9;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --border: #d7d1c4;
+      --radius-pill: 999px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, #ffffff 0, #f4f2ed 45%, #e5ded2 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(
+        to bottom,
+        rgba(248, 245, 238, 0.96),
+        rgba(248, 245, 238, 0.9)
+      );
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(215, 209, 196, 0.9);
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px 16px 6px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .brand-block {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 25% 0, #ffffff 0, #f4faef 26%, #8fc361 55%, #256b3a 88%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(37, 107, 58, 0.55);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-wheat {
+      position: absolute;
+      right: -2px;
+      bottom: -1px;
+      font-size: 14px;
+      transform: rotate(-18deg);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.28);
+    }
+
+    .brand-name {
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .header-links {
+      display: flex;
+      gap: 6px;
+      font-size: 11px;
+      align-items: center;
+    }
+
+    .header-link {
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
+      background: transparent;
+      transition: 0.16s ease;
+    }
+
+    .header-link:hover {
+      border-color: rgba(37,107,58,0.35);
+      background: rgba(229,242,234,0.8);
+      color: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    .header-link.active {
+      border-color: rgba(37,107,58,0.75);
+      background: var(--green-soft);
+      color: var(--green-dark);
+      box-shadow: 0 6px 16px rgba(37,107,58,0.3);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 18px 16px 26px;
+    }
+
+    .about-hero {
+      border-radius: 22px;
+      border: 1px solid rgba(215, 209, 196, 0.9);
+      background: var(--bg-soft);
+      padding: 18px 20px;
+      box-shadow: 0 16px 40px rgba(15,23,42,0.12);
+      margin-bottom: 18px;
+    }
+
+    .about-hero h1 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .about-hero p {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.3fr) minmax(0,1fr);
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .about-box {
+      border-radius: 18px;
+      border: 1px solid rgba(215, 209, 196, 0.9);
+      background: #ffffff;
+      padding: 12px 14px;
+      font-size: 13px;
+    }
+
+    .about-box h2 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .about-list {
+      padding-left: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .about-list li {
+      margin-bottom: 4px;
+    }
+
+    .contact-block {
+      margin-top: 16px;
+      border-radius: 18px;
+      border: 1px dashed rgba(37,107,58,0.5);
+      background: #e5f2ea;
+      padding: 12px 14px;
+      font-size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contact-tag {
+      font-size: 12px;
+      color: var(--green-dark);
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--green-dark);
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: 0.16s ease;
+    }
+
+    .contact-btn:hover {
+      background: #194425;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(15,23,42,0.4);
+    }
+
+    .contact-btn.secondary {
+      background: #ffffff;
+      color: var(--green-dark);
+      border-color: rgba(37,107,58,0.5);
+    }
+
+    .contact-btn.secondary:hover {
+      background: #f3faf6;
+    }
+
+    footer {
+      border-top: 1px solid #d4d0c4;
+      background: #f6f1e6;
+      padding: 10px 16px 14px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 720px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="brand-block">
+      <a href="index.html">
+        <div class="brand-mark">
+          V
+          <span class="brand-wheat">🌾</span>
+        </div>
+      </a>
+      <div>
+        <div class="brand-name">VILAGRO TEX</div>
+        <div class="brand-sub">Сільськогосподарська техніка • Україна</div>
+      </div>
+    </div>
+    <nav class="header-links">
+      <a href="index.html" class="header-link">Головна</a>
+      <a href="about.html" class="header-link active">Про нас</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="about-hero">
+    <h1>Про VILAGRO TEX</h1>
+    <p>
+      VILAGRO TEX — це невелика, але амбітна українська команда, яка допомагає аграріям підібрати
+      техніку під конкретне господарство. Ми працюємо з реальною технікою, показуємо її в полі,
+      не ховаємо стан і завжди чесно говоримо про нюанси.
+    </p>
+
+    <div class="about-grid">
+      <div class="about-box">
+        <h2>Як ми працюємо</h2>
+        <ul class="about-list">
+          <li>Підбираємо техніку під площу, ґрунти та парк машин.</li>
+          <li>Можемо показати техніку вживу — на стоянці або в роботі.</li>
+          <li>Скидаємо додаткові фото та відео в Telegram.</li>
+          <li>Допомагаємо з логістикою та базовим оформленням документів.</li>
+        </ul>
+      </div>
+      <div class="about-box">
+        <h2>Що для нас важливо</h2>
+        <ul class="about-list">
+          <li>Чесність по стану техніки.</li>
+          <li>Довгострокові відносини з клієнтами.</li>
+          <li>Повага до часу фермера — все по суті.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contact-block">
+      <div class="contact-tag">
+        Якщо хочете обговорити конкретну техніку або запитати по вашому господарству — напишіть або зателефонуйте.
+      </div>
+      <div class="contact-actions">
+        <a href="tel:+380676764058" class="contact-btn">
+          📞 Подзвонити
+        </a>
+        <a href="https://t.me/vilagrotex" target="_blank" class="contact-btn secondary">
+          ✉️ Написати в Telegram
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year"></span> VILAGRO TEX — сільськогосподарська техніка.</span>
+    <span>Сайт: <a href="https://vilagro-tec.netlify.app/">vilagro-tec.netlify.app</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
